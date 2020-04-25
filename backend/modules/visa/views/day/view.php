@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Level */
+/* @var $model backend\modules\visa\models\Day */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Levels', 'url' => ['index']];
+$this->title = $model->DayId;
+$this->params['breadcrumbs'][] = ['label' => 'Days', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+\yii\web\YiiAsset::register($this);
 ?>
-<div class="level-view">
+<div class="day-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Yii::$app->CommonHtml->goBack(\yii\helpers\Url::to(["index"])); ?>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Update', ['update', 'id' => $model->DayId], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->DayId], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,8 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'name',
+            'DayId',
+            'DayName',
+            'IsActive',
+            'CreatedOn',
+            'LastUpdated',
         ],
     ]) ?>
 

@@ -2,16 +2,14 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
-/* @var $model backend\models\Level */
+/* @var $model backend\modules\visa\models\BookingStatus */
 
-$this->title = 'Create Level';
-$this->params['breadcrumbs'][] = ['label' => 'Levels', 'url' => ['index']];
+$this->title = 'Create Booking Status';
+$this->params['breadcrumbs'][] = ['label' => 'Booking Statuses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="level-create">
-	<?= Yii::$app->CommonHtml->goBackWithConfirm(); ?>
+<div class="booking-status-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

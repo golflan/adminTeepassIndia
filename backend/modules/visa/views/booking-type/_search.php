@@ -4,20 +4,29 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\LevelSearch */
+/* @var $model backend\modules\visa\models\BookingTypeSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="level-search">
+<div class="booking-type-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
+        'options' => [
+            'data-pjax' => 1
+        ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'BookingTypeId') ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form->field($model, 'Name') ?>
+
+    <?= $form->field($model, 'IsActive') ?>
+
+    <?= $form->field($model, 'CreatedOn') ?>
+
+    <?= $form->field($model, 'LastUpdated') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
