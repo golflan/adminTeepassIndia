@@ -119,7 +119,7 @@ class LoginForm extends Model
     {
 
         // $this->addError($attribute, json_encode($this->password));
-             $this->addError($attribute, json_encode($this->username));
+            //  $this->addError($attribute, json_encode($this->username));
         //     if (!$user || !$user->validatePassword($this->password)) {
         //         $this->addError($attribute, 'Incorrect username or password.');
         //     }
