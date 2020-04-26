@@ -28,6 +28,7 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            ['password', 'resetPasswordRequired'],
         ];
     }
     public function behaviors()
@@ -37,7 +38,7 @@ class LoginForm extends Model
     $behaviors[] = [
         'class' => '\backend\components\LoginAttemptBehavior',
 
-        'attempts' => 3,
+        'attempts' => 30,
 
         'duration' => 300,
 
@@ -82,7 +83,7 @@ class LoginForm extends Model
     {
         $model = new \common\models\UserAuthLog();
         $data = Yii::$app->request->post();
-        
+
         $model->username = $data['LoginForm']['username'];
         $model->password_log = \common\models\User::PasswordForLog($data['LoginForm']['password']);
         $model->ip = Yii::$app->request->getUserIP();
@@ -112,5 +113,15 @@ class LoginForm extends Model
         }
 
         return $this->_user;
+    }
+
+    public function resetPasswordRequired($attribute, $params)
+    {
+
+        // $this->addError($attribute, json_encode($this->password));
+             $this->addError($attribute, json_encode($this->username));
+        //     if (!$user || !$user->validatePassword($this->password)) {
+        //         $this->addError($attribute, 'Incorrect username or password.');
+        //     }
     }
 }
