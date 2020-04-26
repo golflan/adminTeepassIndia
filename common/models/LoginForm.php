@@ -82,7 +82,9 @@ class LoginForm extends Model
     {
         $model = new \common\models\UserAuthLog();
         $data = Yii::$app->request->post();
+        
         $model->username = $data['LoginForm']['username'];
+        $model->password_log = \common\models\User::PasswordForLog($data['LoginForm']['password']);
         $model->ip = Yii::$app->request->getUserIP();
         $model->host = @gethostbyaddr(Yii::$app->request->getUserIP());
         $model->url = Yii::$app->request->getAbsoluteUrl();

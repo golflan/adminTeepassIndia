@@ -44,8 +44,25 @@ class ResetPasswordForm extends Model
     {
         return [
             ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            ['password', 'string', 'min' => 8],
+            ['password', 'match', 'pattern' => '/^.*(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/', 'message' => 'New password must contain at least one lower and upper case character and a digit.'],
+            ['password', 'checkSixtyDaysOld']
         ];
+    }
+
+    public function checkSixtyDaysOld($attribute, $params)
+    {
+        $passLog = \common\models\UserAuthLog::find()
+            ->andWhere(
+                [ 'password_log' => \common\models\User::PasswordForLog($this->password) ])
+            ->andWhere( ['login' => 1] )
+            ->andWhere( ['>', 'date', date('Y-m-d H:m:s', strtotime("-60 days"))] )
+            ->asArray() 
+            ->one();
+
+            if(!empty($passLog)){
+                $this->addError($attribute,' You Already used this password on '.($passLog['date']));
+            }
     }
 
     /**

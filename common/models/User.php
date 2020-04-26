@@ -209,4 +209,8 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public static function PasswordForLog($password){
+        return sha1(md5($password));
+    }
 }
