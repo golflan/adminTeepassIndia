@@ -38,7 +38,7 @@ class LoginForm extends Model
     $behaviors[] = [
         'class' => '\backend\components\LoginAttemptBehavior',
 
-        'attempts' => 30,
+        'attempts' => 3,
 
         'duration' => 300,
 
