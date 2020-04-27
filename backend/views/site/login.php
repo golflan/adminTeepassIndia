@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
@@ -46,12 +47,15 @@ $fieldOptions2 = [
 
         <div class="row">
             <div class="col-xs-8">
-                <?php // $form->field($model, 'rememberMe')->checkbox()  ?>
+            
+                <?php  echo $form->field($model, 'rememberMe')->checkbox()  ?>
+                <a href="<?= Url::toRoute(['site/request-password-reset']);?>">Reset Password</a>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
                 <?= Html::submitButton('Sign in', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
             </div>
+           
             <!-- /.col -->
         </div>
         <?php ActiveForm::end(); ?>

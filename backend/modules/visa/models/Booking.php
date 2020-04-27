@@ -140,4 +140,9 @@ class Booking extends \yii\db\ActiveRecord
     {
         return $this->hasOne(PaymentStatus::className(), ['PaymentStatusId' => 'PaymentStatusId']);
     }
+
+    public function getGolfCourse()
+    {
+        return $this->hasOne(GolfCourse::className(), ['GolfCourseId' => 'GolfCourseId']);
+    }
 }

@@ -19,7 +19,7 @@ class BookingTypeController extends Controller
      */
     public function behaviors()
     {
-        $_permission = ['index','create','view','update','delete'];
+        $_permission = ['index'];
 
         return [
             'access' => [

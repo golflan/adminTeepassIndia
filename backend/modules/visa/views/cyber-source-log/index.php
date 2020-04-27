@@ -25,16 +25,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
+            ['class' => 'yii\grid\ActionColumn'],
             'CyberSourceLogId',
             'BookingId',
-            'UserId',
+            'user.UserName',
+            
             'LogData:ntext',
-            'IsActive',
+            
+            // 'IsActive',
             //'CreatedOn',
             //'LastUpdated',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            
         ],
     ]); ?>
     <?php Pjax::end(); ?>

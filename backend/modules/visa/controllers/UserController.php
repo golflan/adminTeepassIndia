@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function behaviors()
     {
-        $_permission = ['index','create','view','update','delete'];
+        $_permission = ['index','view',];
 
         return [
             'access' => [

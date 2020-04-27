@@ -53,7 +53,7 @@ class BookingType extends \yii\db\ActiveRecord
     {
         return [
             'BookingTypeId' => 'Booking Type ID',
-            'Name' => 'Name',
+            'Name' => 'Booking Type',
             'IsActive' => 'Is Active',
             'CreatedOn' => 'Created On',
             'LastUpdated' => 'Last Updated',

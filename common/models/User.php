@@ -176,6 +176,11 @@ class User extends ActiveRecord implements IdentityInterface
     public function setPassword($password)
     {
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+        try {
+            $this->password_hash_updated_at = date('Y-m-d H:i:s');
+        } catch (Exception $e) {
+            
+        }
     }
 
     /**
@@ -208,6 +213,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+       
     }
 
     public static function PasswordForLog($password){

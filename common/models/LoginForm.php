@@ -11,7 +11,7 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
-    public $rememberMe = true;
+    public $rememberMe = false;
 
     private $_user;
 
@@ -117,11 +117,15 @@ class LoginForm extends Model
 
     public function resetPasswordRequired($attribute, $params)
     {
+        $passwordExpiry = User::find()
+        ->andWhere( [ 'username' => $this->username] )
+        ->andWhere( ['status' => 10] )
+        ->andWhere( ['>', 'password_hash_updated_at', date('Y-m-d H:m:s', strtotime("-14 days"))] )
+        ->asArray() 
+        ->one();
+        if(!($passwordExpiry)){
+            $this->addError($attribute, json_encode("Your Password are too old please change"));
+        } 
 
-        // $this->addError($attribute, json_encode($this->password));
-            //  $this->addError($attribute, json_encode($this->username));
-        //     if (!$user || !$user->validatePassword($this->password)) {
-        //         $this->addError($attribute, 'Incorrect username or password.');
-        //     }
     }
 }

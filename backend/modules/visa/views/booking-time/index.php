@@ -26,12 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'BookingTimeId:datetime',
-            'GolfCourseId',
-            'DayId',
+            'BookingTimeId',
+            // 'GolfCourseId',
+            'golfCourse.Name',
+            'day.DayName',
             'OpenTime',
             'CloseTime',
-            //'IsActive',
+            'IsActive',
             //'CreatedOn',
             //'LastUpdated',
 

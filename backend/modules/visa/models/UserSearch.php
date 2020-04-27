@@ -72,7 +72,8 @@ class UserSearch extends User
             ->andFilterWhere(['like', 'Email', $this->Email])
             ->andFilterWhere(['like', 'UserName', $this->UserName])
             ->andFilterWhere(['like', 'Password', $this->Password]);
-
+        $query->andFilterWhere(['IsActive' => 1]);
+        // $query->andFilterWhere(['IsPreAuthVerified' => 1]);
         return $dataProvider;
     }
 }

@@ -61,4 +61,8 @@ class CyberSourceLog extends \yii\db\ActiveRecord
             'LastUpdated' => 'Last Updated',
         ];
     }
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['UserId' => 'UserId']);
+    }
 }

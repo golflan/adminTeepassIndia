@@ -61,7 +61,7 @@ class GolfCourse extends \yii\db\ActiveRecord
             'GolfCourseId' => 'Golf Course ID',
             'GolfTypeId' => 'Golf Type ID',
             'GCBucketId' => 'Gc Bucket ID',
-            'Name' => 'Name',
+            'Name' => 'GolfCourse Name',
             'City' => 'City',
             'IsActive' => 'Is Active',
             'CreatedOn' => 'Created On',

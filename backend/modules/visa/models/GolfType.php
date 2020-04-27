@@ -54,7 +54,7 @@ class GolfType extends \yii\db\ActiveRecord
     {
         return [
             'GolfTypeId' => 'Golf Type ID',
-            'Name' => 'Name',
+            'Name' => 'Golf Type',
             'IsActive' => 'Is Active',
             'CreatedOn' => 'Created On',
             'LastUpdated' => 'Last Updated',

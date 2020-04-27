@@ -28,11 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'GolfTypeId',
             'Name',
-            'IsActive',
-            'CreatedOn',
-            'LastUpdated',
+            // 'IsActive',
+            // 'CreatedOn',
+            // 'LastUpdated',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            // ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
     <?php Pjax::end(); ?>

@@ -53,7 +53,7 @@ class BookingStatus extends \yii\db\ActiveRecord
     {
         return [
             'BookingStatusId' => 'Booking Status ID',
-            'Name' => 'Name',
+            'Name' => 'Booking Status',
             'IsActive' => 'Is Active',
             'CreatedOn' => 'Created On',
             'LastUpdated' => 'Last Updated',

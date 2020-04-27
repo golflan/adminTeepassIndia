@@ -28,9 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'BookingStatusId',
             'Name',
-            'IsActive',
-            'CreatedOn',
-            'LastUpdated',
+            // 'IsActive',
+            // 'CreatedOn',
+            // 'LastUpdated',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

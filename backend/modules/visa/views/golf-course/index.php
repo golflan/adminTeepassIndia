@@ -25,13 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'GolfCourseId',
-            'GolfTypeId',
+            
             'GCBucketId',
+            // 'GolfCourseId',
+            'golfType.Name',
+            // 'GolfTypeId', 
+           
             'Name',
             'City',
-            //'IsActive',
+            'IsActive',
             //'CreatedOn',
             //'LastUpdated',
 

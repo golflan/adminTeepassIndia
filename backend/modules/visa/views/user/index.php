@@ -25,20 +25,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'UserId',
-            'FirstName',
-            'LastName',
-            'CountryCode',
+            // 'FirstName',
+            // 'LastName',
+            // 'CountryCode',
             'Phone',
-            //'Email:email',
-            //'UserName',
+            'Email:email',
+            'UserName',
             //'Password',
-            //'IsPreAuthVerified',
-            //'IsActive',
+            'IsPreAuthVerified',
+            // 'IsActive',
             //'CreatedOn',
             //'LastUpdated',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

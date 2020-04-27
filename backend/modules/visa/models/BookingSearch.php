@@ -41,7 +41,7 @@ class BookingSearch extends Booking
      */
     public function search($params)
     {
-        $query = Booking::find();
+        $query = Booking::find()->orderBy(['BookingId' => SORT_DESC]);
 
         // add conditions that should always apply here
 
