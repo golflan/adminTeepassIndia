@@ -40,6 +40,8 @@
                                 ['label' => 'GolfType', 'icon' => 'circle-o', 'url' => ['/visa/golf-type'],],
                                 ['label' => 'PaymentStatus', 'icon' => 'circle-o', 'url' => ['/visa/payment-status'],],
                                 ['label' => 'User', 'icon' => 'circle-o', 'url' => ['/visa/user'],],
+                                ['label' => 'User Activity Log', 'icon' => 'circle-o', 'url' => ['/audit-entry'],],
+
                             ],
                         ],
                     ],

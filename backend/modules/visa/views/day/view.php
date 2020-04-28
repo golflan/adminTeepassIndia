@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
+    <?= Yii::$app->CommonHtml->goBackWithConfirm(); ?>
         <?= Html::a('Update', ['update', 'id' => $model->DayId], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->DayId], [
             'class' => 'btn btn-danger',

@@ -28,11 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'DayId',
             'DayName',
-            // 'IsActive',
+            'IsActive',
             // // 'CreatedOn',
             // 'LastUpdated',
 
-            // ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
     <?php Pjax::end(); ?>

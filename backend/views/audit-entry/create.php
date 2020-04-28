@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\modules\visa\models\Day */
+/* @var $model backend\models\AuditEntry */
 
-$this->title = 'Create Day';
-$this->params['breadcrumbs'][] = ['label' => 'Days', 'url' => ['index']];
+$this->title = 'Create Audit Entry';
+$this->params['breadcrumbs'][] = ['label' => 'Audit Entries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="day-create">
-<?= Yii::$app->CommonHtml->goBackWithConfirm(); ?>
+<div class="audit-entry-create">
+
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [

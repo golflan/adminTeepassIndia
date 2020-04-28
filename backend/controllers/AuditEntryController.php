@@ -1,25 +1,25 @@
 <?php
 
-namespace backend\modules\visa\controllers;
+namespace backend\controllers;
 
 use Yii;
-use backend\modules\visa\models\Day;
-use backend\modules\visa\models\DaySearch;
+use backend\models\AuditEntry;
+use backend\models\AuditEntrySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DayController implements the CRUD actions for Day model.
+ * AuditEntryController implements the CRUD actions for AuditEntry model.
  */
-class DayController extends Controller
+class AuditEntryController extends Controller
 {
     /**
      * {@inheritdoc}
      */
     public function behaviors()
     {
-        $_permission = ['index','view','update', 'create', 'delete'];
+        $_permission = ['index','view'];
 
         return [
             'access' => [
@@ -42,12 +42,12 @@ class DayController extends Controller
     }
 
     /**
-     * Lists all Day models.
+     * Lists all AuditEntry models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new DaySearch();
+        $searchModel = new AuditEntrySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -57,7 +57,7 @@ class DayController extends Controller
     }
 
     /**
-     * Displays a single Day model.
+     * Displays a single AuditEntry model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -70,16 +70,16 @@ class DayController extends Controller
     }
 
     /**
-     * Creates a new Day model.
+     * Creates a new AuditEntry model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Day();
+        $model = new AuditEntry();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->DayId]);
+            return $this->redirect(['view', 'id' => $model->audit_entry_id]);
         }
 
         return $this->render('create', [
@@ -88,7 +88,7 @@ class DayController extends Controller
     }
 
     /**
-     * Updates an existing Day model.
+     * Updates an existing AuditEntry model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -99,7 +99,7 @@ class DayController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->DayId]);
+            return $this->redirect(['view', 'id' => $model->audit_entry_id]);
         }
 
         return $this->render('update', [
@@ -108,7 +108,7 @@ class DayController extends Controller
     }
 
     /**
-     * Deletes an existing Day model.
+     * Deletes an existing AuditEntry model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -122,15 +122,15 @@ class DayController extends Controller
     }
 
     /**
-     * Finds the Day model based on its primary key value.
+     * Finds the AuditEntry model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Day the loaded model
+     * @return AuditEntry the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Day::findOne($id)) !== null) {
+        if (($model = AuditEntry::findOne($id)) !== null) {
             return $model;
         }
 

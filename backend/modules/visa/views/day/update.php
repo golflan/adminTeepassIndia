@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->DayId, 'url' => ['view', 'i
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="day-update">
-
+<?= Yii::$app->CommonHtml->goBackWithConfirm(); ?>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [

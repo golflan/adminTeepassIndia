@@ -3,6 +3,7 @@
 namespace backend\modules\visa\models;
 
 use Yii;
+use backend\components\AuditEntryBehaviors;
 
 /**
  * This is the model class for table "Day".
@@ -17,6 +18,16 @@ use Yii;
  */
 class Day extends \yii\db\ActiveRecord
 {
+
+    public function behaviors(){
+        return [ 
+            
+            'auditEntryBehaviors' => [
+                'class' => AuditEntryBehaviors::class
+             ],
+            
+        ];
+    }
     /**
      * {@inheritdoc}
      */

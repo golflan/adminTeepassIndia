@@ -3,7 +3,7 @@
 namespace backend\modules\visa\models;
 
 use Yii;
-
+use backend\components\AuditEntryBehaviors;
 /**
  * This is the model class for table "Booking".
  *
@@ -36,6 +36,16 @@ use Yii;
  */
 class Booking extends \yii\db\ActiveRecord
 {
+
+    public function behaviors(){
+        return [ 
+            
+            'auditEntryBehaviors' => [
+                'class' => AuditEntryBehaviors::class
+             ],
+            
+        ];
+    }
     /**
      * {@inheritdoc}
      */

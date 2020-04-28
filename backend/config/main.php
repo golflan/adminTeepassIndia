@@ -18,6 +18,9 @@ return [
         ],
     ],
     'components' => [
+        'CommonHtml' => [
+            'class' => 'backend\components\CommonHtml'
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
