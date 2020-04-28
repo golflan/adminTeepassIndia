@@ -1,5 +1,6 @@
 <?php
 return [
+      // 'timeZone' => 'Asia/Calcutta',
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
@@ -7,6 +8,9 @@ return [
             'username' => 'admin',
             'password' => 'qd30g4q2WRnjfGRmD1XZ',
             'charset' => 'utf8',
+             // 'on afterOpen' => function($event) { 
+            //     $event->sender->createCommand("SET time_zone='+05:30';")->execute(); 
+            // }, 
         ],
         'Visa' => [
             'class' => 'yii\db\Connection',
@@ -14,6 +18,9 @@ return [
             'username' => 'admin',
             'password' => 'qd30g4q2WRnjfGRmD1XZ',
             'charset' => 'utf8',
+             // 'on afterOpen' => function($event) { 
+            //     $event->sender->createCommand("SET time_zone='+05:30';")->execute(); 
+            // }, 
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
