@@ -1,6 +1,14 @@
 <?php
 return [
       // 'timeZone' => 'Asia/Calcutta',
+      'on beforeAction' => function ($event) {
+        if (!(
+              (!empty($_SERVER['HTTPS']) AND $_SERVER['HTTPS'] != 'off') || 
+              $_SERVER['SERVER_PORT'] == 443 
+            )) {
+                return Yii::$app->controller->redirect("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+        }
+    },
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',

@@ -40,7 +40,7 @@ class CyberSourceLogSearch extends CyberSourceLog
      */
     public function search($params)
     {
-        $query = CyberSourceLog::find();
+        $query = CyberSourceLog::find()->orderBy(['CyberSourceLogId' => SORT_DESC]);
 
         // add conditions that should always apply here
 

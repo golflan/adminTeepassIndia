@@ -9,12 +9,16 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'name'=>'Admin TeePass India',
+    
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
         'visa' => [
             'class' => 'backend\modules\visa\module',
+        ],
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
         ],
     ],
     'components' => [
